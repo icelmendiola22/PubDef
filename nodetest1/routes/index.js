@@ -34,16 +34,30 @@ router.post('/adduser', function(req, res) {
     var db = req.db;
 
     // Get our form values. These rely on the "name" attributes
-    var userName = req.body.username;
-    var userEmail = req.body.useremail;
+    var clientFirstName = req.body.firstName;
+    var clientMiddleName = req.body.middleName;
+    var clientLastName = req.body.lastName;
+    var phoneNumber = req.body.phoneNumber;
+    var phoneNumberType = req.body.phoneNumberType;
+    var altContactNumber = req.body.altContactNumber;
+    var altContactName = req.body.altContactName;
+    var altContactRelationship = req.body.altContactRelationship;
+    var email = req.body.email;
 
     // Set our collection
     var collection = db.get('usercollection');
 
     // Submit to the DB
     collection.insert({
-        "username" : userName,
-        "email" : userEmail
+        "clientFirstName" : clientFirstName,
+        "clientMiddleName" : clientMiddleName,
+        "clientLastName" : clientLastName,
+        "phoneNumber" : phoneNumber,
+        "phoneNumberType" : phoneNumberType,
+        "altContactNumber" : altContactNumber,
+        "altContactName" : altContactName,
+        "altContactRelationship" : altContactRelationship,
+        "email" : email
     }, function (err, doc) {
         if (err) {
             // If it failed, return error

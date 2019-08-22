@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add User</title>
+    <title>AB 109 Client Worksheet</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
+    <h1>AB 109 Client Worksheet</h1>
+    <h2>Add New Client</h2>
     <form id="formAddUser" name="adduser" method="post" action="/adduser">
-      <input id="inputUserName" type="text" placeholder="username" name="username" />
-      <input id="inputUserEmail" type="text" placeholder="email" name="useremail" />
+
+      <input id="inputClientFirstName" type="text" placeholder="First Name" name="firstName" />
+      <input id="inputClientMiddleName" type="text" placeholder="Middle Name" name="middleName" />
+      <input id="inputClientLastName" type="text" placeholder="Last Name" name="lastName" />
+      <input id="inputPhoneNumber" type="tel" placeholder="Phone Number" name="phoneNumber"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
+      <input type="radio" value="cellPhone" name="phoneNumberType"> Cell Phone<br>
+      <input type="radio" value="homePhone" name="phoneNumberType"> Home Phone<br>
+      <input id="inputAltContactNumber" type="tel" placeholder="Alt Contact Number" name="altContactNumber"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
+      <input id="inputAltContactName" type="text" placeholder="Alt Contact Name" name="altContactName" />
+      <input id="inputAltContactRelationship" type="text" placeholder="Alt Contact Relationship" name="altContactRelationship" />
+      <input id="inputClientEmail" type="text" placeholder="Email" name="email" />
+
       <button id="btnSubmit" type="submit">Submit</button>
     </form>
   </body>

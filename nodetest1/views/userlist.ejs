@@ -10,7 +10,9 @@
       <%
         var list = '';
         for (i = 0; i < userlist.length; i++) {
-          list += '<li><a href="mailto:' + userlist[i].email + '">' + userlist[i].username + '</a></li>';
+          list += '<li><a href="mailto:' + userlist[i].email + '">' +
+            userlist[i].clientFirstName + ' ' + userlist[i].clientMiddleName +
+            ' ' + userlist[i].clientLastName + '</a></li>';
         }
       %>
       <%- list %>
