@@ -8,21 +8,56 @@
     <h1>AB 109 Client Worksheet</h1>
     <h2>Add New Client</h2>
     <form id="formAddUser" name="adduser" method="post" action="/adduser">
-
+      <!-- Client name -->
+      <h5>Client Name</h5>
       <input id="inputClientFirstName" type="text" placeholder="First Name" name="firstName" />
       <input id="inputClientMiddleName" type="text" placeholder="Middle Name" name="middleName" />
-      <input id="inputClientLastName" type="text" placeholder="Last Name" name="lastName" />
+      <input id="inputClientLastName" type="text" placeholder="Last Name" name="lastName" /><br>
+      <!-- Client phone number and alt number -->
+      <h5>Phone Number</h5>
       <input id="inputPhoneNumber" type="tel" placeholder="Phone Number" name="phoneNumber"
         pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
-      <input type="radio" value="cellPhone" name="phoneNumberType"> Cell Phone<br>
+      <input type="radio" value="cellPhone" name="phoneNumberType"> Cell Phone
       <input type="radio" value="homePhone" name="phoneNumberType"> Home Phone<br>
       <input id="inputAltContactNumber" type="tel" placeholder="Alt Contact Number" name="altContactNumber"
         pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
       <input id="inputAltContactName" type="text" placeholder="Alt Contact Name" name="altContactName" />
-      <input id="inputAltContactRelationship" type="text" placeholder="Alt Contact Relationship" name="altContactRelationship" />
-      <input id="inputClientEmail" type="text" placeholder="Email" name="email" />
+      <input id="inputAltContactRelationship" type="text" placeholder="Alt Contact Relationship"
+        name="altContactRelationship" /><br>
+      <!-- Client Email -->
+      <h5>Email</h5>
+      <input id="inputClientEmail" type="text" placeholder="Email" name="email" /><br>
+      <!-- Client Address -->
+      <h5>Address</h5>
+      <input id="inputAddressStreet" type="text" placeholder="Street" name="addressStreet" />
+      <input id="inputAddressCity" type="text" placeholder="City" name="addressCity" />
+      <input id="inputAddressState" type="text" placeholder="State" name="addressState" />
+      <input id="inputAddressZipcode" type="text" placeholder="Zipcode" name="addressZipcode" /><br>
+      <!-- Client Birthday -->
+      <h5>Birthday</h5>
+      <input id="inputBirthday" type="date" placeholder="Birthday" name="birthday" /><br>
+      <!-- Client Place of Birth -->
+      <h5>Place of Birth</h5>
+      <input id="inputBirthCity" type="text" placeholder="City" name="birthCity" />
+      <input id="inputBirthState" type="text" placeholder="State" name="birthState" />
+      <input id="inputBirthCounty" type="text" placeholder="County" name="addressCounty" />
+      <input id="inputBirthHospital" type="text" placeholder="Hospital Name" name="hospitalName" />
+      <input id="inputBirthCountry" type="text" placeholder="Country" name="birthCountry" /><br>
+      <!-- Client Driver's License / ID -->
+      <h5>Driver's License or ID #</h5>
+      <input id="inputID" type="text" placeholder="Driver's License/ID #" name="id" /><br>
+      <!-- Client Social Security -->
+      <h5>Social Security</h5>
+      <input id="inputSocialSecurity" type="text" placeholder="SS#:   XXX-XX-XXXX" name="socialSecurity"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" /><br>
+      <!-- Program -->
+      <input id="inputProgram" type="text" placeholder="Program" name="program" />
+      <input id="inputTimeLeft" type="text" placeholder="Time Left" name="timeLeft" /><br>
+      <!-- Parent Information -->
+      <input id="inputMotherName" type="text" placeholder="Mother's Full Name" name="motherName" />
+      <input id="inputFatherName" type="text" placeholder="Father's Full Name" name="fatherName" />
 
-      <button id="btnSubmit" type="submit">Submit</button>
+      <br><br><button id="btnSubmit" type="submit">Submit</button>
     </form>
   </body>
 </html>
