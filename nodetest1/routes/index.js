@@ -11,24 +11,24 @@ router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Hello, World!' });
 });
 
-/* GET Userlist page. */
-router.get('/userlist', function(req, res) {
+/* GET clientlist page. */
+router.get('/clientlist', function(req, res) {
     var db = req.db;
     var collection = db.get('usercollection');
     collection.find({},{},function(e,docs){
-        res.render('userlist', {
-            "userlist" : docs
+        res.render('clientlist', {
+            "clientlist" : docs
         });
     });
 });
 
 /* GET New User page. */
-router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+router.get('/newclient', function(req, res) {
+    res.render('newclient', { title: 'Add New Client' });
 });
 
 /* POST to Add User Service */
-router.post('/adduser', function(req, res) {
+router.post('/addclient', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
@@ -103,7 +103,7 @@ router.post('/adduser', function(req, res) {
         }
         else {
             // And forward to success page
-            res.redirect("userlist");
+            res.redirect("clientlist");
         }
     });
 
