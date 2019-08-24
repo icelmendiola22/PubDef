@@ -8,54 +8,73 @@
     <h1>AB 109 Client Worksheet</h1>
     <h2>Add New Client</h2>
     <form id="formAddUser" name="adduser" method="post" action="/adduser">
+      <!-- Date -->
+      <h5>Today's Date</h5>
+      <input id="inputDate" type="date" name="date" /><br><br>
+      <!-- Additional Information -->
+      <input type="checkbox" value="PCS" name="checkbox"> PCS
+      <input type="checkbox" value="Parole" name="checkbox"> Parole
+      <input type="checkbox" value="MS" name="checkbox"> MS
+      <input type="checkbox" value="Probation" name="checkbox"> Probation
+      <input type="checkbox" value="Vet" name="checkbox"> Vet
+      <h5> CDC # (State Prison #)</h5>
+      <input id="inputCDCNumber" type="text" placeholder="CDC/Parole #" name="cdcNumber" />
+      <h5>Booking #</h5>
+      <input id="inputBookingNumber" type="text" placeholder="Booking #" name="bookingNumber" />
       <!-- Client name -->
       <h5>Client Name</h5>
-      <input id="inputClientFirstName" type="text" placeholder="First Name" name="firstName" />
-      <input id="inputClientMiddleName" type="text" placeholder="Middle Name" name="middleName" />
-      <input id="inputClientLastName" type="text" placeholder="Last Name" name="lastName" /><br>
+      <input id="inputName" type="text" placeholder="First Name" name="name" />
+      <input id="inputName" type="text" placeholder="Middle Name" name="name" />
+      <input id="inputName" type="text" placeholder="Last Name" name="name" />
       <!-- Client phone number and alt number -->
       <h5>Phone Number</h5>
-      <input id="inputPhoneNumber" type="tel" placeholder="Phone Number" name="phoneNumber"
+      <input id="inputPhoneNumber" type="tel" placeholder="XXX-XX-XXXX" name="phoneNumber"
         pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
       <input type="radio" value="cellPhone" name="phoneNumberType"> Cell Phone
       <input type="radio" value="homePhone" name="phoneNumberType"> Home Phone<br>
-      <input id="inputAltContactNumber" type="tel" placeholder="Alt Contact Number" name="altContactNumber"
+      <h5>Alternate Contact Information</h5>
+      <input id="inputAltContactNumber" type="tel" placeholder="XXX-XX-XXXX" name="altContactNumber"
         pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
       <input id="inputAltContactName" type="text" placeholder="Alt Contact Name" name="altContactName" />
       <input id="inputAltContactRelationship" type="text" placeholder="Alt Contact Relationship"
-        name="altContactRelationship" /><br>
+        name="altContactRelationship" />
       <!-- Client Email -->
       <h5>Email</h5>
-      <input id="inputClientEmail" type="text" placeholder="Email" name="email" /><br>
+      <input id="inputClientEmail" type="text" placeholder="Email" name="email" />
       <!-- Client Address -->
       <h5>Address</h5>
       <input id="inputAddressStreet" type="text" placeholder="Street" name="addressStreet" />
       <input id="inputAddressCity" type="text" placeholder="City" name="addressCity" />
       <input id="inputAddressState" type="text" placeholder="State" name="addressState" />
-      <input id="inputAddressZipcode" type="text" placeholder="Zipcode" name="addressZipcode" /><br>
+      <input id="inputAddressZipcode" type="text" placeholder="Zipcode" name="addressZipcode" />
       <!-- Client Birthday -->
       <h5>Birthday</h5>
-      <input id="inputBirthday" type="date" placeholder="Birthday" name="birthday" /><br>
+      <input id="inputBirthday" type="date" name="birthday" />
       <!-- Client Place of Birth -->
       <h5>Place of Birth</h5>
       <input id="inputBirthCity" type="text" placeholder="City" name="birthCity" />
       <input id="inputBirthState" type="text" placeholder="State" name="birthState" />
       <input id="inputBirthCounty" type="text" placeholder="County" name="addressCounty" />
       <input id="inputBirthHospital" type="text" placeholder="Hospital Name" name="hospitalName" />
-      <input id="inputBirthCountry" type="text" placeholder="Country" name="birthCountry" /><br>
+      <input id="inputBirthCountry" type="text" placeholder="Country" name="birthCountry" />
       <!-- Client Driver's License / ID -->
       <h5>Driver's License or ID #</h5>
-      <input id="inputID" type="text" placeholder="Driver's License/ID #" name="id" /><br>
+      <input id="inputID" type="text" placeholder="Driver's License/ID #" name="id" />
       <!-- Client Social Security -->
       <h5>Social Security</h5>
-      <input id="inputSocialSecurity" type="text" placeholder="SS#:   XXX-XX-XXXX" name="socialSecurity"
-        pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" /><br>
+      <input id="inputSocialSecurity" type="text" placeholder="XXX-XX-XXXX" name="socialSecurity"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" />
       <!-- Program -->
+      <h5>Program</h5>
       <input id="inputProgram" type="text" placeholder="Program" name="program" />
-      <input id="inputTimeLeft" type="text" placeholder="Time Left" name="timeLeft" /><br>
+      <input id="inputTimeLeft" type="text" placeholder="Time Left" name="timeLeft" />
       <!-- Parent Information -->
-      <input id="inputMotherName" type="text" placeholder="Mother's Full Name" name="motherName" />
+      <h5>Parents' Information</h5>
+      <input id="inputMotherName" type="text" placeholder="Mother's Full Name" name="motherName" /><br>
       <input id="inputFatherName" type="text" placeholder="Father's Full Name" name="fatherName" />
+      <!-- Notes -->
+      <h5>Notes</h5>
+      <input id="inputNotes" type="text" placeholder="Notes" name="notes" />
 
       <br><br><button id="btnSubmit" type="submit">Submit</button>
     </form>
