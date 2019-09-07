@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AB 109</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <!-- Client Information -->
+    <h1>Client Profile</h1><br>
+    <table class="table-border" style="width:100%">
+      <!-- 1st Row -->
+      <tr>
+        <td>Name:</td>
+        <td>Client/Parole #:</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <!-- 2nd Row -->
+      <tr>
+        <td>Phone:</td>
+        <td>Email:</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <!-- 3rd Row -->
+      <tr>
+        <td>Address:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table><br><br>
+    <!-- Tab Folder -->
+    <div class="tab">
+      <a class="tablinks" href="activitylog">Activity Log</a>
+      <a class="tablinks" href="#" id="defaultOpen" style="background-color:#ccc">AB 109</a>
+      <a class="tablinks" href="documents">Documents</a>
+      <a class="tablinks" href="bcrequest">B.C. Request</a>
+    </div>
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <form id="formAddClient" name="addclient" method="post" action="/addclient">
+        <!-- Date -->
+        <h5>Today's Date</h5>
+        <input id="inputDate" type="date" name="date" /><br><br>
+        <!-- Additional Information -->
+        <input type="checkbox" value="PCS" name="checkbox"> PCS
+        <input type="checkbox" value="Parole" name="checkbox"> Parole
+        <input type="checkbox" value="MS" name="checkbox"> MS
+        <input type="checkbox" value="Probation" name="checkbox"> Probation
+        <input type="checkbox" value="Vet" name="checkbox"> Vet
+        <h5> CDC # (State Prison #)</h5>
+        <input id="inputCDCNumber" type="text" placeholder="CDC/Parole #" name="cdcNumber" />
+        <h5>Booking #</h5>
+        <input id="inputBookingNumber" type="text" placeholder="Booking #" name="bookingNumber" />
+        <!-- Client name -->
+        <h5>Client Name</h5>
+        <input id="inputName" type="text" placeholder="First Name" name="name" />
+        <input id="inputName" type="text" placeholder="Middle Name" name="name" />
+        <input id="inputName" type="text" placeholder="Last Name" name="name" />
+        <!-- Client phone number and alt number -->
+        <h5>Phone Number</h5>
+        <input id="inputPhoneNumber" type="tel" placeholder="XXX-XX-XXXX" name="phoneNumber"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
+        <input type="radio" value="cellPhone" name="phoneNumberType"> Cell Phone
+        <input type="radio" value="homePhone" name="phoneNumberType"> Home Phone<br>
+        <h5>Alternate Contact Information</h5>
+        <input id="inputAltContactNumber" type="tel" placeholder="XXX-XX-XXXX" name="altContactNumber"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
+        <input id="inputAltContactName" type="text" placeholder="Alt Contact Name" name="altContactName" />
+        <input id="inputAltContactRelationship" type="text" placeholder="Alt Contact Relationship"
+          name="altContactRelationship" />
+        <!-- Client Email -->
+        <h5>Email</h5>
+        <input id="inputClientEmail" type="text" placeholder="Email" name="email" />
+        <!-- Client Address -->
+        <h5>Address</h5>
+        <input id="inputAddressStreet" type="text" placeholder="Street" name="addressStreet" />
+        <input id="inputAddressCity" type="text" placeholder="City" name="addressCity" />
+        <input id="inputAddressState" type="text" placeholder="State" name="addressState" />
+        <input id="inputAddressZipcode" type="text" placeholder="Zipcode" name="addressZipcode" />
+        <!-- Client Birthday -->
+        <h5>Birthday</h5>
+        <input id="inputBirthday" type="date" name="birthday" />
+        <!-- Client Place of Birth -->
+        <h5>Place of Birth</h5>
+        <input id="inputBirthCity" type="text" placeholder="City" name="birthCity" />
+        <input id="inputBirthState" type="text" placeholder="State" name="birthState" />
+        <input id="inputBirthCounty" type="text" placeholder="County" name="addressCounty" />
+        <input id="inputBirthHospital" type="text" placeholder="Hospital Name" name="hospitalName" />
+        <input id="inputBirthCountry" type="text" placeholder="Country" name="birthCountry" />
+        <!-- Client Driver's License / ID -->
+        <h5>Driver's License or ID #</h5>
+        <input id="inputID" type="text" placeholder="Driver's License/ID #" name="id" />
+        <!-- Client Social Security -->
+        <h5>Social Security</h5>
+        <input id="inputSocialSecurity" type="text" placeholder="XXX-XX-XXXX" name="socialSecurity"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" />
+        <!-- Program -->
+        <h5>Program</h5>
+        <input id="inputProgram" type="text" placeholder="Program" name="program" />
+        <input id="inputTimeLeft" type="text" placeholder="Time Left" name="timeLeft" />
+        <!-- Parent Information -->
+        <h5>Parents' Information</h5>
+        <input id="inputMotherName" type="text" placeholder="Mother's Full Name" name="motherName" /><br>
+        <input id="inputFatherName" type="text" placeholder="Father's Full Name" name="fatherName" />
+        <!-- Client Services/Resources -->
+        <h5>Client Services/Resources</h5>
+        <table style="width:100%">
+          <tr>
+            <td>
+              <input type="checkbox" value="CA ID Fee Waiver" name="servicesResources" /> California ID Fee Waiver
+            </td>
+            <td>
+              <input type="checkbox" value="In & Out Date Releases" name="servicesResources" /> In & Out Date Releases
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="Cell Phone" name="servicesResources" /> Cell Phone
+            </td>
+            <td>
+              <input type="checkbox" value="Legal Help (Civil, Criminal, etc)" name="servicesResources" /> Legal Help (Civil, Criminal, etc)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="Dental" name="servicesResources" /> Dental
+            </td>
+            <td>
+              <input type="checkbox" value="Medical Releases" name="servicesResources" /> Medical Releases
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="Education" name="servicesResources" /> Education
+            </td>
+            <td>
+              <input type="checkbox" value="New Leaf" name="servicesResources" /> New Leaf
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="Employment/Cal-Works" name="servicesResources" /> Employment/Cal-Works
+            </td>
+            <td>
+              <input type="checkbox" value="Social Security App" name="servicesResources" /> Social Security App
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="Food Bank" name="servicesResources" /> Food Bank
+            </td>
+            <td>
+              <input type="checkbox" value="RAP sheet" name="servicesResources" /> RAP sheet
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="Food Stamps/Medi-Cal" name="servicesResources" /> Food Stamps/Medi-Cal
+            </td>
+            <td>
+              <input type="checkbox" value="Vision/Glasses" name="servicesResources" /> Vision/Glasses
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" value="General Relief" name="servicesResources" /> General Relief
+            </td>
+            <td>
+              <input type="checkbox" value="Prop 47" name="servicesResources" /> Prop 47
+            </td>
+          </tr>
+        </table>
+        <!-- Notes -->
+        <h5>Notes</h5>
+        <input id="inputNotes" type="text" placeholder="Notes" name="notes" />
+
+        <br><br><button id="btnSubmit" type="submit">Submit</button><br><br>
+      </form>
+    </div>
+    <!-- Scroll back to top of the page button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  </body>
+
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</html>

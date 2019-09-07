@@ -11,6 +11,26 @@ router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Hello, World!' });
 });
 
+/* GET Activity Log page. */
+router.get('/activitylog', function(req, res) {
+  res.render('activitylog', { title: 'Client Profile' });
+});
+
+/* GET AB 109 page */
+router.get('/ab109', function(req, res) {
+  res.render('ab109', { title: 'AB 109' });
+});
+
+/* GET Documents page */
+router.get('/documents', function(req, res) {
+  res.render('documents', { title: 'Documents' });
+});
+
+/* GET B.C. Request page */
+router.get('/bcrequest', function(req, res) {
+  res.render('bcrequest', { title: 'B.C. Request' });
+});
+
 /* GET clientlist page. */
 router.get('/clientlist', function(req, res) {
     var db = req.db;
@@ -24,7 +44,7 @@ router.get('/clientlist', function(req, res) {
 
 /* GET New User page. */
 router.get('/newclient', function(req, res) {
-    res.render('newclient', { title: 'Add New Client' });
+    res.render('newclient', { title: 'Activity Log' });
 });
 
 /* POST to Add User Service */
