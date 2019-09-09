@@ -14,6 +14,67 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+// Edit Row for Activity Log tab
+function edit_row(no)
+{
+ document.getElementById("edit_button"+no).style.display="none";
+ document.getElementById("save_button"+no).style.display="block";
+
+ var user=document.getElementById("user_row"+no);
+ var date=document.getElementById("date_row"+no);
+ var des=document.getElementById("des_row"+no);
+
+ var user_data=user.innerHTML;
+ var date_data=date.innerHTML;
+ var des_data=des.innerHTML;
+
+ user.innerHTML="<input type='text' id='user_text"+no+"' value='"+user_data+"'>";
+ date.innerHTML="<input type='text' id='date_text"+no+"' value='"+date_data+"'>";
+ des.innerHTML="<input type='text' id='des_text"+no+"' value='"+des_data+"'>";
+}
+
+// Save Row for Activity Log tab
+function save_row(no)
+{
+ var user_val=document.getElementById("user_text"+no).value;
+ var date_val=document.getElementById("date_text"+no).value;
+ var des_val=document.getElementById("des_text"+no).value;
+
+ document.getElementById("user_row"+no).innerHTML=user_val;
+ document.getElementById("date_row"+no).innerHTML=date_val;
+ document.getElementById("des_row"+no).innerHTML=des_val;
+
+ document.getElementById("edit_button"+no).style.display="block";
+ document.getElementById("save_button"+no).style.display="none";
+}
+
+// Delete Row for Activity Log tab
+function delete_row(no)
+{
+ document.getElementById("row"+no+"").outerHTML="";
+}
+
+// Add Row for Activity Log tab
+function add_row()
+{
+ var new_user=document.getElementById("new_user").value;
+ var new_date=document.getElementById("new_date").value;
+ var new_des=document.getElementById("new_des").value;
+
+ var d = new Date()
+ var new_date = d.toDateString()
+
+ var table=document.getElementById("data_table");
+ var table_len=(table.rows.length)-1;
+ var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='user_row"+table_len+"'>"+new_user+"</td><td id='date_row"+table_len+"'>"+new_date+"</td><td id='des_row"+table_len+"'>"+new_des+"</td><td><input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+
+ var d = new Date()
+ var date = d.toDateString()
+
+ document.getElementById("new_user").value="";
+ document.getElementById("new_date").value= date;
+ document.getElementById("new_des").value="";
+}
 
 //Edit button for AB109 form
 function handleEdit() {

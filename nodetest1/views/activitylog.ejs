@@ -1,103 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Activity Log</title>
+    <title>Documents</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-	<script type = "text/javascript" src = "table_script.js"></script>
   </head>
   <body>
-    <h1>Activity Log</h1>
-
-<script>
-function edit_row(no)
-{
- document.getElementById("edit_button"+no).style.display="none";
- document.getElementById("save_button"+no).style.display="block";
-	
- var user=document.getElementById("user_row"+no);
- var date=document.getElementById("date_row"+no);
- var des=document.getElementById("des_row"+no);
-	
- var user_data=user.innerHTML;
- var date_data=date.innerHTML;
- var des_data=des.innerHTML;
-	
- user.innerHTML="<input type='text' id='user_text"+no+"' value='"+user_data+"'>";
- date.innerHTML="<input type='text' id='date_text"+no+"' value='"+date_data+"'>";
- des.innerHTML="<input type='text' id='des_text"+no+"' value='"+des_data+"'>";
-}
-
-function save_row(no)
-{
- var user_val=document.getElementById("user_text"+no).value;
- var date_val=document.getElementById("date_text"+no).value;
- var des_val=document.getElementById("des_text"+no).value;
-
- document.getElementById("user_row"+no).innerHTML=user_val;
- document.getElementById("date_row"+no).innerHTML=date_val;
- document.getElementById("des_row"+no).innerHTML=des_val;
-
- document.getElementById("edit_button"+no).style.display="block";
- document.getElementById("save_button"+no).style.display="none";
-}
-
-function delete_row(no)
-{
- document.getElementById("row"+no+"").outerHTML="";
-}
-
-function add_row()
-{
- var new_user=document.getElementById("new_user").value;
- var new_date=document.getElementById("new_date").value;
- var new_des=document.getElementById("new_des").value;
-
- var d = new Date()
- var new_date = d.toDateString()
-	
- var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
- var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='user_row"+table_len+"'>"+new_user+"</td><td id='date_row"+table_len+"'>"+new_date+"</td><td id='des_row"+table_len+"'>"+new_des+"</td><td><input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
-
- var d = new Date()
- var date = d.toDateString()
-
- document.getElementById("new_user").value="";
- document.getElementById("new_date").value= date;
- document.getElementById("new_des").value="";
-}
-</script>
-
-<div id="wrapper">
-<table align='center' cellspacing=1 cellpadding=9 id="data_table" border=1>
-<tr>
-<th>User</th>
-<th>Date</th>
-<th>Description</th>
-</tr>
-
-
-<tr>
-<td><input type="text" id="new_user"></td>
-<td><input type="text" id="new_date"></td>
-<td><input type="text" id="new_des"></td>
-<td><input type="button" class="add" onclick="add_row();" value="Add"></td>
-</tr>
-
-<tr id="row1">
-<td id="user_row1">Default</td>
-<td id="date_row1">Default Date</td>
-<td id="des_row1">Client profile created</td>
-<td>
-<!-- deleted edit and save button -->
-<input type="button" value="Delete" class="delete" onclick="delete_row('1')">
-</td>
-</tr>
-
-</table>
-</div>
-
-
-
+    <!-- Client Information -->
+    <h1>Client Profile</h1><br>
+    <table style="width:100%">
+      <!-- 1st Row -->
+      <tr>
+        <td>Name:</td>
+        <td>Client/Parole #:</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <!-- 2nd Row -->
+      <tr>
+        <td>Phone:</td>
+        <td>Email:</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <!-- 3rd Row -->
+      <tr>
+        <td>Address:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table><br><br>
+    <!-- Tab Folder -->
+    <div class="tab">
+      <a id="defaultOpen" class="tablinks" href="activitylog" style="background-color:#ccc">Activity Log</a>
+      <a class="tablinks" href="ab109">AB 109</a>
+      <a class="tablinks" href="documents">Documents</a>
+      <a class="tablinks" href="bcrequest">B.C. Request</a>
+    </div>
+    <!-- Tab Content -->
+    <div id="wrapper" class="tab-content"><br>
+      <table align='center' cellspacing=1 cellpadding=9 id="data_table" border=1>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><input type="text" id="new_user"></td>
+          <td><input type="text" id="new_date"></td>
+          <td><input type="text" id="new_des"></td>
+          <td><input type="button" class="add" onclick="add_row();" value="Add"></td>
+        </tr>
+        <tr id="row1">
+          <td id="user_row1">Default</td>
+          <td id="date_row1">Default Date</td>
+          <td id="des_row1">Client profile created</td>
+          <td>
+          <!-- deleted edit and save button -->
+          <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+          </td>
+        </tr>
+      </table><br>
+    </div>
+    <!-- Scroll back to top of the page button -->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
   </body>
+
+  <script src="javascripts/myScript.js"></script>
 </html>
