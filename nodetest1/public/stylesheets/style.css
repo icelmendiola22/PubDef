@@ -53,7 +53,7 @@ td {
   border-top: none;
 }
 
-#myBtn {
+#topBtn {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -69,6 +69,6 @@ td {
   border-radius: 4px;
 }
 
-#myBtn:hover {
+#topBtn:hover {
   background-color: #e3ced6;
 }
